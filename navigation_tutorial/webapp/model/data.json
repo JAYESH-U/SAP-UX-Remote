@@ -1,0 +1,85 @@
+{
+    "customers": [
+        {
+            "id": 100,
+            "name": "Sap 100 ltd",
+            "city": "Bengaluru",
+            "orders": [
+                {
+                    "oid": "o1",
+                    "price": 10000,
+                    "priority": "Low"
+                },
+                {
+                    "oid": "o2",
+                    "price": 20000,
+                    "priority": "Low"
+                },
+                {
+                    "oid": "o3",
+                    "price": 30000,
+                    "priority": "Medium"
+                },
+                {
+                    "oid": "o4",
+                    "price": 40000,
+                    "priority": "High"
+                }
+            ]
+        },
+        {
+            "id": 200,
+            "name": "Sap 200 ltd",
+            "city": "Coimbatore",
+            "orders": [
+                {
+                    "oid": "o1",
+                    "price": 11000,
+                    "priority": "Low"
+                },
+                {
+                    "oid": "o2",
+                    "price": 22000,
+                    "priority": "Low"
+                },
+                {
+                    "oid": "o3",
+                    "price": 33000,
+                    "priority": "Medium"
+                },
+                {
+                    "oid": "o4",
+                    "price": 44000,
+                    "priority": "High"
+                }
+            ]
+        },
+        {
+            "id": 300,
+            "name": "Sap 300 ltd",
+            "city": "Hyderabad",
+            "orders": [
+                {
+                    "oid": "o1",
+                    "price": 11100,
+                    "priority": "Low"
+                },
+                {
+                    "oid": "o2",
+                    "price": 22200,
+                    "priority": "Low"
+                },
+                {
+                    "oid": "o3",
+                    "price": 33300,
+                    "priority": "Medium"
+                },
+                {
+                    "oid": "o4",
+                    "price": 44400,
+                    "priority": "High"
+                }
+            ]
+        }
+    ]
+}

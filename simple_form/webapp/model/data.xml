@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<customer>
+    <id>100</id>
+    <name>Jayesh</name>
+    <phone>1234567890</phone>
+    <city>Bengaluru</city>
+    <country>India</country>
+    <post>540000</post>
+    <newSaleEntry>
+        <id />
+        <price />
+        <sorg />
+        <srep />
+    </newSaleEntry>
+    <sales>
+        <id>1</id>
+        <price>1000</price>
+        <sorg>1</sorg>
+        <srep>Hanumappa</srep>
+    </sales>
+    <sales>
+        <id>2</id>
+        <price>2000</price>
+        <sorg>2</sorg>
+        <srep>Chetan</srep>
+    </sales>
+    <sales>
+        <id>3</id>
+        <price>3000</price>
+        <sorg>3</sorg>
+        <srep>Rakshit</srep>
+    </sales>
+    <sales>
+        <id>4</id>
+        <price>4000</price>
+        <sorg>4</sorg>
+        <srep>Ashish</srep>
+    </sales>
+    <sales>
+        <id>5</id>
+        <price>5000</price>
+        <sorg>5</sorg>
+        <srep>Abhishek</srep>
+    </sales>
+</customer>

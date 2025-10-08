@@ -1,0 +1,46 @@
+{
+    "id": 100,
+    "name": "Jayesh",
+    "phone": 1234567890,
+    "city": "Bengaluru",
+    "country": "India",
+    "post": 540000,
+    "newSaleEntry": {
+        "id": null,
+        "price": null,
+        "sorg": null,
+        "srep": null
+    },
+    "sales": [
+        {
+            "id": 1,
+            "price": 1000,
+            "sorg": 1,
+            "srep": "Hanumappa"
+        },
+        {
+            "id": 2,
+            "price": 2000,
+            "sorg": 2,
+            "srep": "Chetan"
+        },
+        {
+            "id": 3,
+            "price": 3000,
+            "sorg": 3,
+            "srep": "Rakshit"
+        },
+        {
+            "id": 4,
+            "price": 4000,
+            "sorg": 4,
+            "srep": "Ashish"
+        },
+        {
+            "id": 5,
+            "price": 5000,
+            "sorg": 5,
+            "srep": "Abhishek"
+        }
+    ]
+}

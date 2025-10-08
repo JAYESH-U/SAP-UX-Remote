@@ -1,0 +1,42 @@
+<mvc:View controllerName="ibm.sap.ux.odataconsumer.controller.ODataConsumer"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="xproductsTable" items="{oData>/Orders/}" >
+            <!-- <sap.ui.core:Title id="salesXMLTableTitle" text="Sales Form"/> -->
+            <columns>
+                <Column id="xcolId" width="5em">
+                    <header><Text id="xtextId" text="OrderID" /></header>
+                </Column>
+                <Column id="xcolPrice" width="5em">
+                    <header><Text id="xtextPrice" text="CustomerID" /></header>
+                </Column>
+                <Column id="xcolSorg" width="5em">
+                    <header><Text id="xtextSorg" text="Freight" /></header>
+                </Column>
+                <!-- <Column id="xcolSrep" width="5em">
+                    <header><Text id="xtextSrep" text="{r>srep}" /></header>
+                </Column> -->
+            </columns>
+
+            <items>
+                <ColumnListItem id="x_IDGenColumnListItem">
+                    <cells>
+                        <Text id="xcellId" text="{oData>OrderID}" />
+                    </cells>
+                    <cells>
+                        <Text id="xcellPrice" text="{oData>CustomerID}" />
+                    </cells>
+                    <cells>
+                        <Text id="xcellSorg" text="{oData>Freight}" />
+                    </cells>
+                    <!-- <cells>
+                        <Text id="xcellSrep" text="{x>srep}" />
+                    </cells> -->
+                </ColumnListItem>
+            </items>
+        </Table>
+        </content>
+    </Page>
+</mvc:View>

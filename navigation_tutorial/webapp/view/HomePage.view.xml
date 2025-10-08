@@ -1,0 +1,75 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="ibm.sap.ux.navigationtutorial.controller.HomePage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="HomePage" title="{i18n>title}">
+        <Text text="Home Page" id="HomeText"></Text>
+        <Button text="Sales Page" id="SalesPageHomeButton" press=".navToSales"></Button>
+
+        <content>
+            <!-- <Table 
+                id="customerTable" 
+                inset="false"
+                items="{path: 'c>/customers/'}" 
+                selectionChange=".onSelectionChange"
+                mode="SingleSelectMaster"
+            > -->
+            <Table 
+                id="customerTable" 
+                inset="false"
+                items="{path: 'c>/customers/'}" 
+                itemPress=".onItemPress" 
+                mode="SingleSelectMaster"
+            >
+                <columns>
+                    <Column id="colId" width="5em">
+                        <header><Text id="textId" text="ID" /></header>
+                    </Column>
+                    <Column id="colName" width="5em">
+                        <header><Text id="textName" text="Name" /></header>
+                    </Column>
+                    <Column id="colCity" width="5em">
+                        <header><Text id="textCity" text="city" /></header>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Active" id="x_IDGenColumnListItem">
+                        <cells>
+                            <Text id="cellId" text="{c>id}" />
+                        </cells>
+                        <cells>
+                            <Text id="cellName" text="{c>name}" />
+                        </cells>
+                        <cells>
+                            <Text id="cellCity" text="{c>city}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+
+        <content>
+            <Table id="HomeSalesTable" items="{c>orders}">
+                <columns>
+                    <Column id="oHColId">
+                        <header><Text id="oHIdText" text="Order Id"></Text></header>
+                    </Column>
+                    <Column id="oHColPrice">
+                        <header><Text id="oHPriceText" text="Price"></Text></header>
+                    </Column>
+                    <Column id="oHColPriority">
+                        <header><Text id="oHPriorityText" text="Priority"></Text></header>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem id="HomeSalesTableColumns">
+                        <cells><Text id="oHIdCell" text="{c>oid}"></Text></cells>
+                        <cells><Text id="oHPriceCell" text="{c>price}"></Text></cells>
+                        <cells><Text id="oHPriorityCell" text="{c>priority}"></Text></cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

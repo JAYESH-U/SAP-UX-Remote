@@ -1,0 +1,8 @@
+<mvc:View
+    controllerName="ibm.sap.ux.navigationtutorial.controller.NotFoundPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="NotFoundPage" title="{i18n>title}">
+        <Text text="NotFound Page" id="NotFoundText"></Text>
+    </Page>
+</mvc:View>

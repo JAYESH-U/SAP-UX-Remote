@@ -1,0 +1,32 @@
+<mvc:View controllerName="ibm.sap.ux.navigationtutorial.controller.SalesPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="SalesPage" title="{c>name}">
+        <Text text="Sales Page" id="SalesText"></Text>
+        <Button text="Home Page" id="HomePageSalesButton" press=".navToHome"></Button>
+
+        <content>
+            <Table id="SalesTable" items="{c>orders}">
+                <columns>
+                    <Column id="oColId">
+                        <header><Text id="oIdText" text="Order Id"></Text></header>
+                    </Column>
+                    <Column id="oColPrice">
+                        <header><Text id="oPriceText" text="Price"></Text></header>
+                    </Column>
+                    <Column id="oColPriority">
+                        <header><Text id="oPriorityText" text="Priority"></Text></header>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem id="SalesTableColumns">
+                        <cells><Text id="oIdCell" text="{c>oid}"></Text></cells>
+                        <cells><Text id="oPriceCell" text="{c>price}"></Text></cells>
+                        <cells><Text id="oPriorityCell" text="{c>priority}"></Text></cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

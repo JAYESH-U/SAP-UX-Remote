@@ -1,0 +1,28 @@
+<mvc:View controllerName="ibm.sap.ux.serviceconsumer.controller.HomePage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="ConsumerTable" items="{/CustomerSet}">
+                <columns>
+                    <Column id="colCno"><header><Text id="headCno" text="Customer Id" /></header></Column>
+                    <Column id="colName1"><header><Text id="headName1" text="Name" /></header></Column>
+                    <Column id="colCity"><header><Text id="headCity" text="City" /></header></Column>
+                    <Column id="colCtry"><header><Text id="headCtry" text="Country" /></header></Column>
+                    <Column id="colRegio"><header><Text id="headRegio" text="Region" /></header></Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="ConsumerColItem">
+                        <cells>
+                            <Text id="cellCno" text="{Cno}"></Text>
+                            <Text id="cellName1" text="{Name1}"></Text>
+                            <Text id="cellCity" text="{City}"></Text>
+                            <Text id="cellCtry" text="{Ctry}"></Text>
+                            <Text id="cellRegio" text="{= ${Regio} ? ${Regio} : 'Not Specified'}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,98 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "ibm.sap.ux.simpleform",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.0",
+      "toolsId": "ffaa5e47-1e69-4f18-9746-97f0d4ef2e89"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.141.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ibm.sap.ux.simpleform.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ibm.sap.ux.simpleform.view",
+        "async": true,
+        "viewPath": "ibm.sap.ux.simpleform.view"
+      },
+      "routes": [
+        {
+          "name": "RouteSimpleForm",
+          "pattern": ":?query:",
+          "target": [
+            "TargetSimpleForm"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetSimpleForm": {
+          "id": "SimpleForm",
+          "name": "SimpleForm"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ibm.sap.ux.simpleform.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

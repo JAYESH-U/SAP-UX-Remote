@@ -1,0 +1,161 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="ibm.sap.ux.simpleform.controller.SimpleForm"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    
+    <content>
+        
+        <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="form0">
+            <sap.ui.layout.form:content>
+        
+                <sap.ui.core:Title text="Csutomer Form" id="title3"/>
+
+                <Label text="Id" id="label-1" labelFor="CustomerId" />
+                <Input width="100%" id="CustomerId" placeholder="Customer Id" value="{c>/id}"/> 
+        
+                <Label text="Name" id="label0" labelFor="input0"/>
+                <Input width="100%" id="input0" placeholder="John" value="{c>/name}"/> 
+                <Input width="100%" id="input1" placeholder="Doe"/>
+        
+                <Label text="Phone" id="label2"/>
+                <Input type="Number" width="100%" id="input2" placeholder="1234567890" value="{c>/phone}"/>
+            
+                <Label text="City" id="label3"/>
+                <Input type="Text" width="100%" id="input3" placeholder="Bengaluru" value="{c>/city}"/>
+            
+                <Label text="Country" id="label4"/>
+                <Input type="Text" width="100%" id="input4" placeholder="India" value="{c>/country}"/>
+            
+                <Label text="Post" id="label5"/>
+                <Input type="Number" width="100%" id="input5" placeholder="540000" value="{c>/post}"/>
+        
+            </sap.ui.layout.form:content>
+        </sap.ui.layout.form:SimpleForm>
+        
+    </content>
+
+    <content>
+
+        <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="form1">
+            <!-- <sap.ui.layout.form:content> -->
+                <sap.ui.core:Title id="salesFormTitle" text="Sales Form"/>
+                <Label id="sLabel1" text="Organiaztion Id" />
+                <Input id="sInput1" type="Number" width="100%" placeholder="123456" value="{c>/newSaleEntry/id}"/>
+                
+                <Label id="sLabel2" text="Price" />
+                <Input id="sInput2" type="Number" width="100%" placeholder="123456" value="{c>/newSaleEntry/price}"/>
+
+                <Label id="sLabel3" text="Sale Organization" />
+                <Input id="sInput3" type="Number" width="100%" placeholder="123456" value="{c>/newSaleEntry/sorg}"/>
+
+                <Label id="sLabel4" text="Sale Representative" />
+                <Input id="sInput4" type="Text" width="100%" placeholder="John Doe" value="{c>/newSaleEntry/srep}"/>
+
+                <Button id="sSubmit" type="Accept" text="Submit" icon="sap-icon://save" press=".createSales"/>
+            <!-- </sap.ui.layout.form:content> -->
+        </sap.ui.layout.form:SimpleForm>
+
+    </content>
+
+    <content>
+
+        <Table id="productsTable" items="{c>/sales/}">
+            <columns>
+                <Column id="colId" width="5em">
+                    <header><Text id="textId" text="ID" /></header>
+                </Column>
+                <Column id="colPrice" width="5em">
+                    <header><Text id="textPrice" text="Price" /></header>
+                </Column>
+                <Column id="colSorg" width="5em">
+                    <header><Text id="textSorg" text="S.Org" /></header>
+                </Column>
+                <Column id="colSrep" width="5em">
+                    <header><Text id="textSrep" text="S.Rep" /></header>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem id="_IDGenColumnListItem">
+                    <cells>
+                        <Text id="cellId" text="{c>id}" />
+                    </cells>
+                    <cells>
+                        <Text id="cellPrice" text="{c>price}" />
+                    </cells>
+                    <cells>
+                        <Text id="cellSorg" text="{c>sorg}" />
+                    </cells>
+                    <cells>
+                        <Text id="cellSrep" text="{c>srep}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        
+    </content>
+
+    <content>
+
+        <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="form2">
+            <sap.ui.layout.form:content>
+                <sap.ui.core:Title id="xsalesFormTitle" text="Sales Form XML"/>
+                <Label id="xsLabel1" text="Organiaztion Id" />
+                <Input id="xsInput1" type="Number" width="100%" placeholder="123456" value="{x>/newSaleEntry/id}"/>
+                
+                <Label id="xsLabel2" text="Price" />
+                <Input id="xsInput2" type="Number" width="100%" placeholder="123456" value="{x>/newSaleEntry/price}"/>
+
+                <Label id="xsLabel3" text="Sale Organization" />
+                <Input id="xsInput3" type="Number" width="100%" placeholder="123456" value="{x>/newSaleEntry/sorg}"/>
+
+                <Label id="xsLabel4" text="Sale Representative" />
+                <Input id="xsInput4" type="Text" width="100%" placeholder="John Doe" value="{x>/newSaleEntry/srep}"/>
+
+                <Button id="xsSubmit" type="Accept" text="Submit" icon="sap-icon://save" press=".createSalesXML"/>
+            </sap.ui.layout.form:content>
+        </sap.ui.layout.form:SimpleForm>
+
+    </content>
+
+    <content>
+
+        <Table id="xproductsTable" items="{x>/sales/}" >
+            <!-- <sap.ui.core:Title id="salesXMLTableTitle" text="Sales Form"/> -->
+            <columns>
+                <Column id="xcolId" width="5em">
+                    <header><Text id="xtextId" text="{r>ord}" /></header>
+                </Column>
+                <Column id="xcolPrice" width="5em">
+                    <header><Text id="xtextPrice" text="{r>prc}" /></header>
+                </Column>
+                <Column id="xcolSorg" width="5em">
+                    <header><Text id="xtextSorg" text="{r>sorg}" /></header>
+                </Column>
+                <Column id="xcolSrep" width="5em">
+                    <header><Text id="xtextSrep" text="{r>srep}" /></header>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem id="x_IDGenColumnListItem">
+                    <cells>
+                        <Text id="xcellId" text="{x>id}" />
+                    </cells>
+                    <cells>
+                        <Text id="xcellPrice" text="{x>price}" />
+                    </cells>
+                    <cells>
+                        <Text id="xcellSorg" text="{x>sorg}" />
+                    </cells>
+                    <cells>
+                        <Text id="xcellSrep" text="{x>srep}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        
+    </content>
+        
+    </Page>
+</mvc:View>
