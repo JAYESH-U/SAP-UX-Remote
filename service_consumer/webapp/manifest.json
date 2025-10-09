@@ -82,7 +82,7 @@
         "viewType": "XML",
         "async": true,
         "viewPath": "ibm.sap.ux.serviceconsumer.view",
-        "controlAggregation": "pages",
+        "controlAggregation": "masterPages",
         "controlId": "app",
         "clearControlAggregation": false
       },
@@ -113,7 +113,7 @@
         "TargetSalesOrderPage": {
           "viewType": "XML",
           "transition": "slide",
-          "clearControlAggregation": false,
+          "controlAggregation": "detailPages",
           "viewId": "SalesOrderPage",
           "viewName": "SalesOrderPage"
         }
