@@ -3,7 +3,13 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-            <Table id="ConsumerTable" items="{/CustomerSet}">
+            <Table 
+                id="ConsumerTable" 
+                items="{path: '/CustomerSet'}"
+                mode="SingleSelectMaster"
+                inset="false"
+                itemPress=".onItemPress"
+            >
                 <columns>
                     <Column id="colCno"><header><Text id="headCno" text="Customer Id" /></header></Column>
                     <Column id="colName1"><header><Text id="headName1" text="Name" /></header></Column>
@@ -12,7 +18,7 @@
                     <Column id="colRegio"><header><Text id="headRegio" text="Region" /></header></Column>
                 </columns>
                 <items>
-                    <ColumnListItem id="ConsumerColItem">
+                    <ColumnListItem type="Active" id="ConsumerColItem">
                         <cells>
                             <Text id="cellCno" text="{Cno}"></Text>
                             <Text id="cellName1" text="{Name1}"></Text>

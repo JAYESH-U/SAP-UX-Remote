@@ -1,0 +1,29 @@
+<mvc:View controllerName="ibm.sap.ux.serviceconsumer.controller.SalesOrderPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="SalesOrderPage" title="{i18n>title}">
+        <content>
+            <Table 
+                id="SalesOrderTable" 
+                items="{path: 'nav_cus_to_so'}"
+            >
+                <columns>
+                    <Column id="sColSo"><header><Text id="sHeadSo" text="Order Id" /></header></Column>
+                    <Column id="sColPrice"><header><Text id="sHeadPrice" text="Price" /></header></Column>
+                    <Column id="sColSorg"><header><Text id="sHeadSorg" text="Sorg" /></header></Column>
+                    <Column id="sColCustomer"><header><Text id="sHeadCustomer" text="Customer" /></header></Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="SalesOrderColItem">
+                        <cells>
+                            <Text id="sCellSo" text="{So}"></Text>
+                            <Text id="sCellPrice" text="{Price}"></Text>
+                            <Text id="sCellSorg" text="{Sorg}"></Text>
+                            <Text id="sCellCustomer" text="{Customer}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

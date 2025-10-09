@@ -93,6 +93,13 @@
           "target": [
             "TargetHomePage"
           ]
+        },
+        {
+          "name": "RouteSalesOrderPage",
+          "pattern": "sales_order/{Cno}",
+          "target": [
+            "TargetSalesOrderPage"
+          ]
         }
       ],
       "targets": {
@@ -102,6 +109,13 @@
           "clearControlAggregation": false,
           "viewId": "HomePage",
           "viewName": "HomePage"
+        },
+        "TargetSalesOrderPage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "SalesOrderPage",
+          "viewName": "SalesOrderPage"
         }
       }
     },
