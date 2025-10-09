@@ -1,0 +1,130 @@
+{
+  "_version": "1.53.0",
+  "sap.app": {
+    "id": "ibm.sap.ux.serviceconsumerflex",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.0",
+      "toolsId": "61d9d4c2-a9df-4b8f-908d-ca8b842cbe82"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZADI_SALES_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.114.9",
+      "libs": {
+        "sap.f": {},
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ibm.sap.ux.serviceconsumerflex.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "ibm.sap.ux.serviceconsumerflex.view",
+        "controlId": "fcl",
+        "controlAggregation": "beginColumnPages"
+      },
+      "routes": [
+        {
+          "name": "RouteHomePage",
+          "pattern": ":?query:",
+          "target": [
+            "TargetHomePage"
+          ]
+        },
+        {
+          "name": "RouteSalesOrderPage",
+          "pattern": "sales_order/{Cno}",
+          "target": [
+            "TargetHomePage",
+            "TargetSalesOrderPage"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHomePage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "HomePage",
+          "viewName": "HomePage",
+          "controlAggregation": "beginColumnPages"
+        },
+        "TargetSalesOrderPage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "SalesOrderPage",
+          "viewName": "SalesOrderPage",
+          "controlAggregation": "midColumnPages"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ibm.sap.ux.serviceconsumerflex.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

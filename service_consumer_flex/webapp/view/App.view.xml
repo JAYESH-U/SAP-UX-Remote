@@ -1,0 +1,18 @@
+<mvc:View xmlns:f="sap.f" controllerName="ibm.sap.ux.serviceconsumerflex.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+
+    <App id="app">
+        <f:FlexibleColumnLayout
+            id="fcl"
+            layout="{/layout}"  
+            backgroundDesign="Solid">
+            
+            <f:beginColumnPages></f:beginColumnPages> 
+            <f:midColumnPages></f:midColumnPages>     
+            <f:endColumnPages></f:endColumnPages>    
+        </f:FlexibleColumnLayout>
+    </App>
+    <!-- <SplitApp id="app"></SplitApp> -->
+</mvc:View>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZADI_SALES_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Customer" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Cno"/>
+                </Key>
+                <Property Name="Cno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ctry" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country/Region Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Regio" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sterm" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Search term" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="nav_cus_to_so" Relationship="ZADI_SALES_SRV.assn_cus_soh" FromRole="FromRole_assn_cus_soh" ToRole="ToRole_assn_cus_soh"/>
+            </EntityType>
+            <EntityType Name="SO_Header" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vbeln"/>
+                </Key>
+                <Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Netwr" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Net Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sold-to Party" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="nav_cus_item" Relationship="ZADI_SALES_SRV.assn_cus_si" FromRole="FromRole_assn_cus_si" ToRole="ToRole_assn_cus_si"/>
+            </EntityType>
+            <EntityType Name="SO_item" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vbeln"/>
+                </Key>
+                <Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Posnr" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Netwr" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Net Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kwmeng" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3" sap:unicode="false" sap:label="Order quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="assn_cus_soh" sap:content-version="1">
+                <End Type="ZADI_SALES_SRV.Customer" Multiplicity="*" Role="FromRole_assn_cus_soh"/>
+                <End Type="ZADI_SALES_SRV.SO_Header" Multiplicity="*" Role="ToRole_assn_cus_soh"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assn_cus_soh">
+                        <PropertyRef Name="Cno"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assn_cus_soh">
+                        <PropertyRef Name="Kunnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assn_cus_si" sap:content-version="1">
+                <End Type="ZADI_SALES_SRV.SO_Header" Multiplicity="*" Role="FromRole_assn_cus_si"/>
+                <End Type="ZADI_SALES_SRV.SO_item" Multiplicity="*" Role="ToRole_assn_cus_si"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assn_cus_si">
+                        <PropertyRef Name="Vbeln"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assn_cus_si">
+                        <PropertyRef Name="Vbeln"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZADI_SALES_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="CustomerSet" EntityType="ZADI_SALES_SRV.Customer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SO_HeaderSet" EntityType="ZADI_SALES_SRV.SO_Header" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SO_itemSet" EntityType="ZADI_SALES_SRV.SO_item" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="assn_cus_siSet" Association="ZADI_SALES_SRV.assn_cus_si" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SO_HeaderSet" Role="FromRole_assn_cus_si"/>
+                    <End EntitySet="SO_itemSet" Role="ToRole_assn_cus_si"/>
+                </AssociationSet>
+                <AssociationSet Name="assn_cus_sohSet" Association="ZADI_SALES_SRV.assn_cus_soh" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CustomerSet" Role="FromRole_assn_cus_soh"/>
+                    <End EntitySet="SO_HeaderSet" Role="ToRole_assn_cus_soh"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="http://mtsapserver6a.themdlabs.com:8000/sap/opu/odata/sap/ZADI_SALES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://mtsapserver6a.themdlabs.com:8000/sap/opu/odata/sap/ZADI_SALES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
