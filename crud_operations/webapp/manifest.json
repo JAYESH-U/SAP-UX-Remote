@@ -1,0 +1,143 @@
+{
+  "_version": "1.53.0",
+  "sap.app": {
+    "id": "ibm.sap.ux.crudoperations",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.0",
+      "toolsId": "e840f663-1ddf-458d-8a68-6567e9aa099a"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZADI_SALES_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.114.9",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ibm.sap.ux.crudoperations.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "ibm.sap.ux.crudoperations.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteCustomerTable",
+          "pattern": ":?query:",
+          "target": [
+            "TargetCustomerTable"
+          ]
+        },
+        {
+          "name": "RouteCustomerForm",
+          "pattern": "create_customer",
+          "target": [
+            "TargetCustomerForm"
+          ]
+        },
+        {
+          "name": "RouteCustomerUpdateForm",
+          "pattern": "update_customer/{Cno}",
+          "target": [
+            "TargetCustomerUpdateForm"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetCustomerTable": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CustomerTable",
+          "viewName": "CustomerTable"
+        },
+        "TargetCustomerForm": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CustomerForm",
+          "viewName": "CustomerForm"
+        },
+        "TargetCustomerUpdateForm": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CustomerUpdateForm",
+          "viewName": "CustomerUpdateForm"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ibm.sap.ux.crudoperations.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

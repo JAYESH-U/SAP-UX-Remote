@@ -1,0 +1,86 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="ibm.sap.ux.crudoperations.controller.CustomerUpdateForm"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="CustomerUpdateFormPage" title="{i18n>title}">
+        <!-- <headerContent>
+            <Button
+                id="DeleteAllButton"
+                text="Delete All" 
+                type="Negative" 
+                icon="sap-icon://delete"
+                press=".onDeleteSelectedPress" />
+        </headerContent> -->
+
+        <content>
+
+        <sap.ui.layout.form:SimpleForm 
+            editable="true" 
+            layout="ResponsiveGridLayout" 
+            xmlns:sap.ui.layout.form="sap.ui.layout.form" 
+            xmlns:sap.ui.core="sap.ui.core" 
+            id="CustomerUpdateForm"
+        >
+            <sap.ui.layout.form:content>
+                <sap.ui.core:Title id="customerUpdateTitle" text="Update Customer {cf>/Cno}"/>
+                
+                <!-- <Label id="csLabel1" text="Customer Id" />
+                <Input id="uCno" type="Text" width="100%" placeholder="123456" value="{cf>/Cno}"/> -->
+                
+                <Label id="csLabel2" text="Name" />
+                <Input id="uCName1" type="Text" width="100%" placeholder="John Doe" value="{cf>/Name1}"/>
+
+                <Label id="csLabel3" text="City" />
+                <Input id="uCCityy" type="Text" width="100%" placeholder="Bengaluru" value="{cf>/Cityy}"/>
+
+                <Label id="csLabel4" text="Country" />
+                <Input id="uCCtry" type="Text" width="100%" placeholder="India" value="{cf>/Ctry}"/>
+
+                <!-- <Button id="CSubmit" type="Accept" text="Submit" icon="sap-icon://save" press=".onCreateCustomer"/> -->
+            </sap.ui.layout.form:content>
+        </sap.ui.layout.form:SimpleForm>
+
+    </content>
+
+    <footer>
+        <Toolbar id="CustomerUpdateFormFooter">
+            <ToolbarSpacer id="CustomerUpdateFormFooterSpacer"/>
+            <Button 
+                id="CreateUpdateCustomerButton"
+                text="Update Customer" 
+                type="Accept"
+                icon="sap-icon://update"
+                press=".onUpdateCustomer" /> 
+        </Toolbar>
+    </footer>
+        
+    <!-- <content>
+            <Table 
+                id="ConsumerTable" 
+                items="{path: '/CustomerSet'}"
+                inset="false"
+                itemPress=".onItemPress"
+                mode="MultiSelect"
+                delete=".onRowDelete"
+            >
+                <columns>
+                    <Column id="colCno"><header><Text id="headCno" text="Customer Id" /></header></Column>
+                    <Column id="colName1"><header><Text id="headName1" text="Name" /></header></Column>
+                    <Column id="colCity"><header><Text id="headCity" text="City" /></header></Column>
+                    <Column id="colCtry"><header><Text id="headCtry" text="Country" /></header></Column>
+                    <Column id="colRegio"><header><Text id="headRegio" text="Region" /></header></Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="ConsumerColItem">
+                        <cells>
+                            <Text id="cellCno" text="{Cno}"></Text>
+                            <Text id="cellName1" text="{Name1}"></Text>
+                            <Text id="cellCity" text="{Cityy}"></Text>
+                            <Text id="cellCtry" text="{Ctry}"></Text>
+                            <Text id="cellRegio" text="{= ${Regio} ? ${Regio} : 'Not Specified'}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content> -->
+    </Page>
+</mvc:View>

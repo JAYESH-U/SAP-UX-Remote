@@ -1,0 +1,74 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="ibm.sap.ux.crudoperations.controller.CustomerTable"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="CustomerTablePage" title="{i18n>title}">
+        <headerContent>
+            <Button
+                id="DeleteAllButton"
+                text="Delete All" 
+                type="Negative" 
+                icon="sap-icon://delete"
+                press=".onDeleteSelectedPress" />
+            <Button
+                id="CreateButton"
+                text="Create Customer" 
+                type="Default" 
+                icon="sap-icon://create"
+                press=".onClickCreateButton" />
+        </headerContent>
+
+        <!-- <content>
+
+        <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="CustomerForm">
+            <sap.ui.layout.form:content>
+                <sap.ui.core:Title id="xsalesFormTitle" text="Sales Form XML"/>
+                
+                <Label id="xsLabel1" text="Customer Id" />
+                <Input id="Cno" type="Text" width="100%" placeholder="123456"/>
+                
+                <Label id="xsLabel2" text="Name" />
+                <Input id="CName1" type="Text" width="100%" placeholder="John Doe"/>
+
+                <Label id="xsLabel3" text="City" />
+                <Input id="CCityy" type="Text" width="100%" placeholder="Bengaluru"/>
+
+                <Label id="xsLabel4" text="Country" />
+                <Input id="CCtry" type="Text" width="100%" placeholder="India"/>
+
+                <Button id="CSubmit" type="Accept" text="Submit" icon="sap-icon://save" press=".onCreateCustomer"/>
+            </sap.ui.layout.form:content>
+        </sap.ui.layout.form:SimpleForm>
+
+    </content> -->
+        
+        <content>
+            <Table 
+                id="ConsumerTable" 
+                items="{path: '/CustomerSet'}"
+                inset="false"
+                itemPress=".onItemPress"
+                mode="MultiSelect"
+                delete=".onRowDelete"
+            >
+                <columns>
+                    <Column id="colCno"><header><Text id="headCno" text="Customer Id" /></header></Column>
+                    <Column id="colName1"><header><Text id="headName1" text="Name" /></header></Column>
+                    <Column id="colCity"><header><Text id="headCity" text="City" /></header></Column>
+                    <Column id="colCtry"><header><Text id="headCtry" text="Country" /></header></Column>
+                    <Column id="colRegio"><header><Text id="headRegio" text="Region" /></header></Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="ConsumerColItem">
+                        <cells>
+                            <Text id="cellCno" text="{Cno}"></Text>
+                            <Text id="cellName1" text="{Name1}"></Text>
+                            <Text id="cellCity" text="{Cityy}"></Text>
+                            <Text id="cellCtry" text="{Ctry}"></Text>
+                            <Text id="cellRegio" text="{= ${Regio} ? ${Regio} : 'Not Specified'}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
