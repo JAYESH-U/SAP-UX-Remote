@@ -1,0 +1,58 @@
+<mvc:View controllerName="ibm.sap.ux.northwindserviceconsumer.controller.Orders"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    core:require="{formatter: 'ibm/sap/ux/northwindserviceconsumer/model/formatter'}"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Table 
+            id="OrdersTable" 
+            items="{path: '/Orders', 
+                    filters: [{
+                        path: 'CustomerID',
+                        operator: 'EQ',
+                        value1: 'VINET'
+                    }],
+                    sorter: [{
+                        path: 'OrderDate',
+                        descending: true
+                    }]}"
+            inset="false"
+        >
+            <columns>
+                <Column id="cOrderId"><header><Text id="hOrderId" text="OrderId"></Text></header></Column>
+                <Column id="cCustomerId"><header><Text id="hCustomerId" text="Customer Id"></Text></header></Column>
+                <Column id="cEmployeeId"><header><Text id="hEmployeeId" text="Employee Id"></Text></header></Column>
+                <Column id="cOderDate"><header><Text id="hOderDate" text="Oder Date"></Text></header></Column>
+                <Column id="cRequiredDate"><header><Text id="hRequiredDate" text="Rreuired Date"></Text></header></Column>
+                <Column id="cShippedDate"><header><Text id="hShippedDate" text="hShippedDate"></Text></header></Column>
+                <Column id="cShipName"><header><Text id="hShipName" text="Ship Name"></Text></header></Column>
+                <Column id="cShipAddress"><header><Text id="hShipAddress" text="Ship Address"></Text></header></Column>
+                <Column id="cShipCity"><header><Text id="hShipCity" text="Ship City"></Text></header></Column>
+                <Column id="cShipRegion"><header><Text id="hShipRegion" text="Ship Region"></Text></header></Column>
+                <Column id="cShipPostalCode"><header><Text id="hShipPostalCode" text="Ship Postal Code"></Text></header></Column>
+                <Column id="cShipCountry"><header><Text id="hShipCountry" text="Ship Country"></Text></header></Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Active" id="OdersTableColumnListItems">
+                    <cells>
+                        <Text id="OrderId" text="{OrderID}"></Text>
+                        <Text id="CustomerId" text="{CustomerID}"></Text>
+                        <Text id="EmployeeId" text="{EmployeeID}"></Text>
+                        <Text id="OderDate" text="{ path: 'OrderDate',
+                                                    formatter: 'formatter.formatDate'}"></Text>
+                        <Text id="RequiredDate" text="{ path: 'RequiredDate',
+                                                        formatter: 'formatter.formatDate'}"></Text>
+                        <Text id="ShippedDate" text="{ path: 'ShippedDate',
+                                                        formatter: 'formatter.formatDate'}"></Text>
+                        <Text id="ShipName" text="{ShipName}"></Text>
+                        <Text id="ShipAddress" text="{ShipAddress}"></Text>
+                        <Text id="ShipCity" text="{ShipCity}"></Text>
+                        <Text id="ShipRegion" text="{ShipRegion}"></Text>
+                        <Text id="ShipPostalCode" text="{ShipPostalCode}"></Text>
+                        <Text id="ShipCountry" text="{ShipCountry}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

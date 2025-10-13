@@ -1,0 +1,114 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "ibm.sap.ux.northwindserviceconsumer",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.0",
+      "toolsId": "dfd4120b-13e8-49f4-9e40-c23c50895020"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.141.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ibm.sap.ux.northwindserviceconsumer.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ibm.sap.ux.northwindserviceconsumer.view",
+        "async": true,
+        "viewPath": "ibm.sap.ux.northwindserviceconsumer.view"
+      },
+      "routes": [
+        {
+          "name": "RouteOrders",
+          "pattern": ":?query:",
+          "target": [
+            "TargetOrders"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetOrders": {
+          "id": "Orders",
+          "name": "Orders"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ibm.sap.ux.northwindserviceconsumer.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
