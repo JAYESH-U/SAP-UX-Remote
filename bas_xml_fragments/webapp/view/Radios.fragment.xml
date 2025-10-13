@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label id="ReadioButtonGroupLabel" labelFor="rbg1" text="An example with 'matrix' layout" />
+	<RadioButtonGroup id="RadioButtons" columns="3" width="100%" class="sapUiMediumMarginBottom" select=".onSelect">
+		<RadioButton id="RB1-1" text="Long Option Number 1" />
+		<RadioButton id="RB1-2" text="Option 2" enabled="false" />
+		<RadioButton id="RB1-3" text="Nr. 3" editable="false" />
+		<RadioButton id="RB1-4" text="Long Option 4" />
+		<RadioButton id="RB1-5" text="Option 5" />
+		<RadioButton id="RB1-6" text="Nr. 6" />
+	</RadioButtonGroup>
+</core:FragmentDefinition>

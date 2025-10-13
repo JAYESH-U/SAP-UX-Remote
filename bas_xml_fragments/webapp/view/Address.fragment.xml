@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<sap.ui.layout.form:SimpleForm 
+		editable="true" 
+		layout="ResponsiveGridLayout" 
+		xmlns:sap.ui.layout.form="sap.ui.layout.form" 
+		id="__form3"
+	>
+		<sap.ui.layout.form:content>
+			<core:Title text=" Address Details" id="__title0"/>
+
+			<Label text="firstName" id="__labe20"/>
+			<Input width="100%" id="__input0" maxLength = "25" value="{s>/id}"/>
+
+			<Label text="lastName" id="__labe30"/>
+			<Input width="100%" id="__input1"/>
+
+			<Label text="city" id="__labe40"/>
+			<Input width="100%" id="__input41"/>
+
+			<Label text="country" id="__labe50"/>
+			<Input width="100%" id="__input51"/>
+
+			<Button id="SubmitButton" press=".onSubmit" text="Submit"></Button>
+		</sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+</core:FragmentDefinition>
