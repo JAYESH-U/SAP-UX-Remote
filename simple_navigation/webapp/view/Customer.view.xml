@@ -1,0 +1,16 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="ibm.sap.ux.simplenavigation.controller.Customer"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <form:SimpleForm id="CustomerForm" editable="true" layout="ResponsiveGridLayout">
+            <form:content>
+                <Title id="CustomerFormTitle" text="Customer View"></Title>
+
+                <Label id="LabelInput1" text="Sales ID"></Label>
+                <Input id="Input1" type="Text" editable="true" width="100%" placeholder="123456"></Input>
+
+                <Button id="CustomerFormSubmit" type="Accept" text="Go" press="onSubmit"></Button>
+            </form:content>
+        </form:SimpleForm>
+    </Page>
+</mvc:View>

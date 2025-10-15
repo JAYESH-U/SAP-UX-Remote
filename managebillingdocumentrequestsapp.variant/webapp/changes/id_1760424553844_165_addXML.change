@@ -1,0 +1,30 @@
+{
+  "changeType": "addXML",
+  "reference": "customer.managebillingdocumentrequestsapp.variant",
+  "namespace": "apps/customer.managebillingdocumentrequestsapp.variant/changes/",
+  "creation": "2025-10-14T06:49:16.551Z",
+  "projectId": "customer.managebillingdocumentrequestsapp.variant",
+  "packageName": "$TMP",
+  "moduleName": "customer/managebillingdocumentrequestsapp/variant/changes/fragments/CustomButton.fragment.xml",
+  "support": {
+    "generator": "@sap-ux/control-property-editor",
+    "sapui5Version": "1.141.1",
+    "command": "addXML"
+  },
+  "originalLanguage": "EN",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "change",
+  "fileName": "id_1760424553844_165_addXML",
+  "content": {
+    "targetAggregation": "content",
+    "index": 11,
+    "fragmentPath": "fragments/CustomButton.fragment.xml"
+  },
+  "texts": {},
+  "selector": {
+    "id": "cus.sd.extbilldocreq.manage::sap.suite.ui.generic.template.ListReport.view.ListReport::C_BillgDocReqWorklist--template::ListReport::TableToolbar",
+    "idIsLocal": false
+  },
+  "dependentSelector": {},
+  "jsOnly": false
+}
