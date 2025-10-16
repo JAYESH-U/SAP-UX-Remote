@@ -1,0 +1,24 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"    
+>
+    <Page id="FCLPage" title="{i18n>title}">
+        <f:FlexibleColumnLayout
+            id="fcl"
+            backgroundDesign="Solid"
+            layout="ThreeColumnsMidExpanded"
+        >
+            
+            <f:beginColumnPages>
+                <Text id="Page1" text="page1"/>
+            </f:beginColumnPages> 
+            <f:midColumnPages>
+                <Text id="Page2" text="page3"/>
+            </f:midColumnPages>     
+            <f:endColumnPages>
+                <Text id="Page3" text="page3"/>
+            </f:endColumnPages>    
+        </f:FlexibleColumnLayout>
+    </Page>
+</mvc:View>

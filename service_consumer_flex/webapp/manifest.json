@@ -83,8 +83,9 @@
         "viewType": "XML",
         "async": true,
         "viewPath": "ibm.sap.ux.serviceconsumerflex.view",
-        "controlId": "fcl",
-        "controlAggregation": "beginColumnPages"
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "clearControlAggregation": false
       },
       "routes": [
         {
@@ -101,6 +102,13 @@
             "TargetHomePage",
             "TargetSalesOrderPage"
           ]
+        },
+        {
+          "name": "RouteFLPPage",
+          "pattern": "flp",
+          "target": [
+            "TargetFLP"
+          ]
         }
       ],
       "targets": {
@@ -109,14 +117,21 @@
           "transition": "slide",
           "viewId": "HomePage",
           "viewName": "HomePage",
-          "controlAggregation": "beginColumnPages"
+          "clearControlAggregation": false
         },
         "TargetSalesOrderPage": {
           "viewType": "XML",
           "transition": "slide",
           "viewId": "SalesOrderPage",
           "viewName": "SalesOrderPage",
-          "controlAggregation": "midColumnPages"
+          "clearControlAggregation": false
+        },
+        "TargetFLP": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "FCLPage",
+          "viewName": "FCLPage",
+          "clearControlAggregation": false
         }
       }
     },

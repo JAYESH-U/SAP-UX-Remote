@@ -5,15 +5,15 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
         "ibm.sap.ux.serviceconsumerflex.controller.HomePage",
         {
             onInit: function () {
-                const oRouter = this.getOwnerComponent().getRouter();
-                oRouter.getRoute("RouteHomePage").attachPatternMatched(
-                    function (oEvent) {
-                        // Set layout to OneColumn when only the master route is hit
-                        this.getView()
-                            .getModel("appView")
-                            .setProperty("/layout", "OneColumn");
-                    }.bind(this)
-                );
+                // const oRouter = this.getOwnerComponent().getRouter();
+                // oRouter.getRoute("RouteHomePage").attachPatternMatched(
+                //     function (oEvent) {
+                //         // Set layout to OneColumn when only the master route is hit
+                //         this.getView()
+                //             .getModel("appView")
+                //             .setProperty("/layout", "OneColumn");
+                //     }.bind(this)
+                // );
             },
             onItemPress: function (oEvent) {
                 console.log("Clicked");
@@ -51,6 +51,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
                         Cno: sCustomerNo,
                     });
             },
+            onRouteFLP: function() {
+                console.log("RoutingToFLP");
+                
+                this.getOwnerComponent().getRouter().navTo('RouteFLPPage')
+            }
         }
     );
 });

@@ -4,15 +4,6 @@
     xmlns="sap.m">
 
     <App id="app">
-        <f:FlexibleColumnLayout
-            id="fcl"
-            layout="{/layout}"  
-            backgroundDesign="Solid">
-            
-            <f:beginColumnPages></f:beginColumnPages> 
-            <f:midColumnPages></f:midColumnPages>     
-            <f:endColumnPages></f:endColumnPages>    
-        </f:FlexibleColumnLayout>
     </App>
     <!-- <SplitApp id="app"></SplitApp> -->
 </mvc:View>
