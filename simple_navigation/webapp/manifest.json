@@ -51,6 +51,13 @@
         "settings": {
           "bundleName": "ibm.sap.ux.simplenavigation.i18n.i18n"
         }
+      },
+      "op" : {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/data.json",
+        "settings": {
+          "defaultBindingMode": "OneWay"
+        }
       }
     },
     "resources": {

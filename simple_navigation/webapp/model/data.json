@@ -1,0 +1,20 @@
+{
+    "operators": [
+        {
+            "opr": "+",
+            "text": "Add"
+        },
+        {
+            "opr": "-",
+            "text": "Subtract"
+        },
+        {
+            "opr": "*",
+            "text": "Multiply"
+        },
+        {
+            "opr": "/",
+            "text": "Divide"
+        }
+    ]
+}

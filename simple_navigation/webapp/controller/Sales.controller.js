@@ -44,6 +44,37 @@ sap.ui.define(
                 _bindDetailView: async function (sCustomerId) {
                     this.getView().byId("InputS1").setValue(sCustomerId);
                 },
+
+                onCalculate: function () {
+                    const oView = this.getView();
+
+                    const a = parseInt(oView.byId("ele1").getValue());
+                    const b = parseInt(oView.byId("ele2").getValue());
+                    const op = oView.byId("ComboBox").getSelectedKey();
+                    const c = oView.byId("ele3");
+
+                    console.log(a, b, op);
+
+                    let ans;
+                    switch (op) {
+                        case "+":
+                            ans = a + b;
+                            break;
+                        case "-":
+                            ans = a - b;
+                            break;
+                        case "*":
+                            ans = a * b;
+                            break;
+                        case "/":
+                            ans = a / b;
+                            break;
+                        default:
+                            ans = -Infinity;
+                    }
+
+                    c.setValue(ans);
+                },
             }
         );
     }

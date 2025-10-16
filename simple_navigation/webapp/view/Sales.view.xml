@@ -1,7 +1,8 @@
-<mvc:View xmlns:form="sap.ui.layout.form" controllerName="ibm.sap.ux.simplenavigation.controller.Sales"
+<mvc:View xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" controllerName="ibm.sap.ux.simplenavigation.controller.Sales"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="salesPage" title="{i18n>title}">
+        <content>
         <form:SimpleForm id="SalesForm" editable="true" layout="ResponsiveGridLayout">
             <form:content>
                 <Title id="SalesFormTitle" text="Sales View"></Title>
@@ -12,5 +13,22 @@
                 <!-- <Button id="CustomerSFormSubmit" type="Accept" text="Go" press="onSubmit"></Button> -->
             </form:content>
         </form:SimpleForm>
+        </content>
+
+        <content>
+            <Label id="CalculatorLabel" text="Operands"></Label>
+            <Input id="ele1" placeholder="0"></Input>
+            <ComboBox id="ComboBox" items="{op>/operators}">
+                <items>
+                    <core:Item id="item0" key="{op>opr}" text="{op>text}"></core:Item>
+                </items>
+            </ComboBox>
+            <Input id="ele2" placeholder="0"></Input>
+
+            <Label id="CalculatorAns" text="Calculated value"></Label>
+            <Input id="ele3" enabled="false" placeholder="Press Calculate Button"></Input>
+
+            <Button id="CalculatorButton" text="Calculate" type="Accept" press="onCalculate"></Button>
+        </content>
     </Page>
 </mvc:View>
