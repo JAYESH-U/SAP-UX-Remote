@@ -1,0 +1,11 @@
+<mvc:View controllerName="progresssteps.controller.V1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:custom="progresssteps.control">
+    <Page id="page" title="{i18n>title}">
+    <custom:progresssteps
+        value="2"
+        max="4"
+        Change="onStepChange"/>
+    </Page>
+</mvc:View>

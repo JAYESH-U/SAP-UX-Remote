@@ -1,0 +1,37 @@
+.progressSteps{
+    display:flex;
+    align-items:center;
+}
+
+.step{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:2px solid #ccc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    background:white;
+}
+
+.step.completed{
+    background-color:#4CAF50;
+    border-color:#4CAF50;
+    color:white;
+}
+
+.step.active{
+    background-color:#2196F3;
+    border-color:#2196F3;
+    color:white;
+}
+
+.connector{
+    height:2px;
+    flex:1;
+    background-color:#ccc;
+}
+.connector.completed{
+    background-color:#4CAF50;
+}

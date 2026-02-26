@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <GenericTile id="GenericTile" press="onCardPress" class="cardItem">
+        <TileContent id="TileContent">
+            <Text id="cardText" text="{cards>name}" />
+        </TileContent>
+    </GenericTile>
+
+</core:FragmentDefinition>

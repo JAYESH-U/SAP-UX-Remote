@@ -1,0 +1,43 @@
+.cardItem {
+    background-color: white;
+    border-radius: 15px;
+    margin: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+
+    display: flex; /* REQUIRED for centering */
+    justify-content: center; /* remove quotes */
+    align-items: center; /* remove quotes */
+
+    position: relative; /* better stacking */
+    transition: all 0.3s ease-in-out;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* small hover effect */
+.cardItem:hover {
+    transform: scale(1.05);
+}
+
+/* active card (clicked) */
+.cardActive {
+    transform: scale(1.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.cardActive.cardItem:hover {
+    transform: scale(1.15);
+}
+
+.cardItem:not(:last-child)::after {
+    content: "➜";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #0070f2;
+}

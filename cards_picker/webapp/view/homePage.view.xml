@@ -1,0 +1,27 @@
+<mvc:View
+    controllerName="ibm.sap.ux.cardspicker.controller.homePage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <HBox
+                id="cardsContainer"
+                justifyContent="Center"
+                alignItems="Center"
+                renderType="Bare"
+            />
+            <!-- <HBox id="HBox" items="{ path: 'cards>/cards' }">
+                <VBox id="VBOX"
+                    class="cardItem"
+                    press="onCardPress"
+                >
+                    <Text id="CardText" text="{cards>name}" />
+                </VBox>
+            </HBox> -->
+        </content>
+    </Page>
+</mvc:View>
